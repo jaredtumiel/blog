@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spinning Up in Active Inference and the Free Energy Principle | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Spinning Up in Active Inference and the Free Energy Principle" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A Syllabus for the Curious" />
+<meta property="og:description" content="A Syllabus for the Curious" />
+<link rel="canonical" href="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" />
+<meta property="og:url" content="https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-14T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spinning Up in Active Inference and the Free Energy Principle" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-10-14T00:00:00-05:00","datePublished":"2020-10-14T00:00:00-05:00","description":"A Syllabus for the Curious","headline":"Spinning Up in Active Inference and the Free Energy Principle","mainEntityOfPage":{"@type":"WebPage","@id":"https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html"},"url":"https://jaredtumiel.github.io/blog/2020/10/14/spinning-up-in-ai.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jaredtumiel.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Spinning Up in Active Inference and the Free Energy Principle</h1><p class="page-description">A Syllabus for the Curious</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-10-14T00:00:00-05:00" itemprop="datePublished">
+        Oct 14, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      26 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#how-to-use-this-syllabus">How to use this syllabus</a></li>
+<li class="toc-entry toc-h2"><a href="#prerequisites">Prerequisites</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#neuroscience">Neuroscience</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#predictive-codingpredictive-processing">Predictive Coding/Predictive Processing</a></li>
+<li class="toc-entry toc-h4"><a href="#computational-neuro-and-modelling-techniques">Computational Neuro and modelling techniques</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#control-theorycybernetics">Control Theory/Cybernetics</a></li>
+<li class="toc-entry toc-h3"><a href="#physics">Physics</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#statistical-mechanics">Statistical Mechanics</a></li>
+<li class="toc-entry toc-h4"><a href="#non-equilibrium-statistical-mechanics">Non-equilibrium Statistical Mechanics</a></li>
+<li class="toc-entry toc-h4"><a href="#classical-mechanics-hamiltonian-mechanics-and-the-principle-of-least-action">Classical Mechanics, Hamiltonian Mechanics, and the Principle of Least Action</a></li>
+<li class="toc-entry toc-h4"><a href="#gauge-theory">Gauge theory</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#maths">Maths</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#bayesian-inference">Bayesian inference</a></li>
+<li class="toc-entry toc-h4"><a href="#information-theory">Information theory</a></li>
+<li class="toc-entry toc-h4"><a href="#information-geometry">Information geometry</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#computer-science-and-machine-learning">Computer science and machine learning</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#deep-learning">Deep Learning</a></li>
+<li class="toc-entry toc-h4"><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+<li class="toc-entry toc-h4"><a href="#variational-inference">Variational inference</a></li>
+<li class="toc-entry toc-h4"><a href="#generative-models">Generative models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#the-free-energy-principle-and-active-inference">The Free Energy Principle and Active Inference</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#general-introductions">General introductions</a></li>
+<li class="toc-entry toc-h3"><a href="#technical-introductions">Technical introductions</a></li>
+<li class="toc-entry toc-h3"><a href="#key-papers">Key papers</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#open-problems">Open Problems</a></li>
+<li class="toc-entry toc-h2"><a href="#conclusion">Conclusion</a></li>
+<li class="toc-entry toc-h2"><a href="#contributors">Contributors</a></li>
+</ul><p>A few months back I posted the first part of <a href="https://jaredtumiel.github.io/blog/2020/08/08/free-energy1.html">an introduction to the Free Energy Principle</a>. I did this because it’s fascinating and important, and yet sometimes comically difficult to learn about. A big part of the problem is probably <a href="https://distill.pub/2017/research-debt/">Research Debt</a> - a dearth of digestible translations of cutting-edge research into something accessible to non-specialists. My <em>FEP Explained</em> posts are aimed at this problem, but this post is aimed at another: not knowing where to start or where to go!</p>
+
+<p><img src="/blog/images/syllabus/lost.jpeg" alt="Alice Lost In The Forest"></p>
+
+<p>For most things humans care to learn, someone has trod the path before and shown the way to others. There is a common starting point (usually the end of high school) an endpoint (doctor, physicist, architect, etc.), and a routine path to take between these two. The FEP has none of these. The researchers tend to come from lots of different backgrounds, so everyone has things they know well, and things they need to learn. There isn’t a clear end-point aside from “understand what’s going on, maybe add to our understanding someday”, and the complete path is not routine enough that there are any university degrees or courses entirely about the FEP.</p>
+
+<p>What we need is a syllabus! A list of material that gives you the necessary background to understand the full Free Energy Principle (and Active Inference), which also functions as a reasonably complete map of the territory so that people can quickly see what the field encompasses and how the parts relate. Our syllabus should cater to the kinds of people who end up interested in the FEP, so should include different starting points and different levels of technical detail. It should gradually improve you, filling in details as you become able to digest them. Lastly, it should challenge you to act and solve new problems - problems you couldn’t have solved before you went through it.</p>
+
+<p>This is a first attempt to do some of those things. Each section has a short motivation, and some of the materials have descriptions where I thought it useful. At the end, there’s a section on Open Problems and Future Research directions which I need your help filling out, so please comment on this post or reply to <a href="https://twitter.com/jnearestn/status/1317214588459507715">the Twitter thread</a>!</p>
+
+<h2 id="how-to-use-this-syllabus">
+<a class="anchor" href="#how-to-use-this-syllabus" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use this syllabus</h2>
+
+<p>Generally, <a href="http://mindingourway.com/dive-in/"><em>dive in</em></a>. Don’t wait to finish all the prerequisites before you try getting your head around the theory. Jeremy Howard from <a href="https://course.fast.ai">Fast.ai</a> has this great line about getting a feel for something by playing around with the full construct <em>before</em> you fully understand it, and once you have a feel for it, only then do you go learn the technical details. So even though this list starts with “prerequisites”, treat that as a placeholder, go until you get stuck, and then come back and see if you can find the answer to the stuck-feeling in one of the prerequisites.</p>
+
+<p>I’ve also tried to have a hierarchy of materials within each category, starting with short, intuitive primers and ending with longer, more technical material that only becomes relevant as your interests deepen. There isn’t a strict order to the materials, which is why it’s probably better to go iteratively deeper across all the categories, instead of linearly down the list.</p>
+
+<h2 id="prerequisites">
+<a class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<h3 id="neuroscience">
+<a class="anchor" href="#neuroscience" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neuroscience</h3>
+
+<p>The FEP came out of Karl Friston’s neuroimaging work, so it shouldn’t be surprising that neuroscience is a key competency.</p>
+
+<h4 id="predictive-codingpredictive-processing">
+<a class="anchor" href="#predictive-codingpredictive-processing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictive Coding/Predictive Processing</h4>
+
+<p>Predictive coding is a theory of how the brain works that inverts the traditional “bottom-up” feature detection view and replaces it with the brain generating top-down predictions instead. When a prediction does not match with what is actually observed, an error signal is passed up through the brain and changes take place to minimise the prediction error in the future.</p>
+
+<p>Predictive processing is closely associated with the FEP, and naturally “emerges” from the equations governing the FEP. In this sense, understanding PP is helpful to have an intuitive view of what the FEP achieves in the brain.</p>
+
+<ul>
+  <li>
+<a href="https://slatestarcodex.com/2016/09/12/its-bayes-all-the-way-up/">It’s Bayes All The Way Up</a> by Scott Alexander [blog]
+    <ul>
+      <li>Scott has a great series of posts on Bayesian brain hypotheses. A nice way to get some intuitions!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://open.spotify.com/episode/61WphINy1mdxCIwUDnEG2M">Bit of a Tangent</a> [podcast]
+    <ul>
+      <li>This is cheating, but we did a series of three podcasts on PP, so check those out if you prefer audio</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.amazon.com/Surfing-Uncertainty-Prediction-Action-Embodied/dp/0190217014">Surfing Uncertainty</a> by Andy Clark [book]
+    <ul>
+      <li>This technical book gives a deep introduction to much of the theory behind PP, but still manages to be accessible to non-neuroscientists (I’m not one). It’s really good for getting an overview of the PP literature and the flavour of this view of the brain!</li>
+      <li>Scott Alexander also has a great review of the book <a href="https://slatestarcodex.com/2017/09/05/book-review-surfing-uncertainty/">here</a>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="computational-neuro-and-modelling-techniques">
+<a class="anchor" href="#computational-neuro-and-modelling-techniques" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computational Neuro and modelling techniques</h4>
+
+<p>Part of the appeal of the FEP is that it might lead to improved models of the brain and biological intelligence. Learning to set up experiments, design simulations, and implement models of neural systems in code is a big part of turning the theoretical results of the FEP into a powerful set of new tools and applications!</p>
+
+<ul>
+  <li>
+<a href="http://www.neuromatchacademy.org/syllabus/">Neuromatch Academy</a> [summer school/course][virtual]
+    <ul>
+      <li>This is a fully-online Summer School with all the materials freely available. It includes all of the content you need to get started in computational neuroscience and includes deep learning and reinforcement learning content too! The content has been created and curated by a great team of researchers and their explicit goal is to train people from diverse backgrounds in computational neuroscience!</li>
+    </ul>
+  </li>
+  <li>
+<a href="http://imbizo.africa/">The Imbizo</a> [summer school/course][in-person]
+    <ul>
+      <li>If/when international travel ever becomes possble again, I cannot more strongly recommend attending the annual Computational Neuroscience ‘Imbizo’ in Muizenburg, South Africa. It’s basically a three week crash course in computational neuroscience with a bunch of awesome speakers and students. It’s easily the most fun I had in 2020, and I learnt a tonne!</li>
+    </ul>
+  </li>
+  <li>
+<a href="http://www.translationalneuromodeling.org/cpcourse/">Computational Psychiatry course</a> [course]
+    <ul>
+      <li>One of the promises of the FEP is a new understanding of the computational basis of psychiatric disorders such as depression, schizophrenia, ADHD, bipolar-mood disorder and others. This course is an introduction to understanding these conditions computationally and mathematically. The course materials are all online, and Karl Friston himself has given some of the lectures in previous years!</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="control-theorycybernetics">
+<a class="anchor" href="#control-theorycybernetics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control Theory/Cybernetics</h3>
+
+<p>A huge part of the FEP has to do with <em>acting</em> on the world! We need to keep our physiological parameters within tolerable limits, using feedback loops and the techniques of control theory. Understandnig the history and techniques of these fields helps us contextualise the problems the FEP and active inference set out to solve.</p>
+
+<ul>
+  <li>
+<a href="https://www.amazon.com/Mind-Motion-Action-Shapes-Thought/dp/046509306X">Mind In Motion: How Action Shapes Thought</a> by Barbara Tversky [book]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=oBc_BHxw78s&amp;list=PLUMWjy5jgHK1NC52DXXrriwihVrYZKqjk">Classical Control Theory</a> by Brian Douglas [videos]
+    <ul>
+      <li>A short but useful introduction to control theory from an engineering viewpoint</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.youtube.com/watch?v=wkfEZmsQqiA&amp;list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y">Understanding PID Control</a> by MatLab [videos]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=Pi7l8mMjYVE&amp;list=PLMrJAkhIeNNR20Mz-VpzgfQs5zrYi085m">Control Bootcamp</a> by Steve Brunton
+    <ul>
+      <li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="physics">
+<a class="anchor" href="#physics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Physics</h3>
+
+<p>The Free Energy Principle wants to explain how we, as biological organisms obeying the laws of physics, can self-organise into complicated creatures that maintain our complexity despite (<a href="https://kaiu.me/2019/10/09/life-and-the-second-law/">or because of</a>) dissipative forces. The FEP rests solidly on the ideas of modern physics, so the more you know here the better!</p>
+
+<h4 id="statistical-mechanics">
+<a class="anchor" href="#statistical-mechanics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statistical Mechanics</h4>
+
+<p>Entropy, Free Energy, non-equilibrium steady states - these ideas are front and centre in the FEP literature and all come from stat-mech. If you were going to spend your time learning about only one area of physics to really have a good basis in the FEP, this is probably the one you’d pick.</p>
+
+<ul>
+  <li>
+<a href="http://theoreticalminimum.com/courses/statistical-mechanics/2013/spring">Statistical Mechanics in The Theoretical Minimum</a> by Leonard Susskind [lecture videos]
+    <ul>
+      <li>Leonard Susskind is a hero to me. I’ve heard more than one person say that they did multiple stat-mech courses and the derivation of the partition function was never as magically clear as Susskind’s. If you’ve never done any stat-mech, this is a good place to start!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.amazon.com/Statistical-Mechanics-Lectures-Frontiers-Physics/dp/0201360764">Statistical Mechanics: A Set of Lectures</a> by Richard Feynman [textbook]
+    <ul>
+      <li>The Feynman Lectures on Physics are rightly famous for their explanatory clarity, but less well-known are his lectures on statistical mechanics! Worth reading just because it’s Feynman!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="non-equilibrium-statistical-mechanics">
+<a class="anchor" href="#non-equilibrium-statistical-mechanics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Non-equilibrium Statistical Mechanics</h4>
+
+<p>Of course, the FEP deals with living systems, and living means being far from thermodynamic equilibrium, so we’ll want to understand how to describe these systems mathematically. The big ideas that come up often are non-equilibrium steady states, as well as the Langevin and Fokker-Planck equations.</p>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=SjTfNFso4mE&amp;list=PLbMVogVj5nJQqNx0ElSk3Ip04Ofg7B22W">Non-equilibrium Statistical Mechanics</a> by the Indian Institute of Technology Madras [lecture videos]
+    <ul>
+      <li>Professor Balakrishnan is legendary on YouTube for the clarity of his explanations. The course is genuinely great and includes lots of detailed explanations of the Langevin and Fokker-Planck perspectives on dynamical systems!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://slideslive.com/38933123/a-worked-example-of-fokkerplanck-based-active-inference">A Worked Example of Fokker-Planck based Active Inference</a> by Magnus Koudahl &amp; Bert De Vries [video]
+    <ul>
+      <li>This is a great direct introduction to using the Fokker-Planck equation in the FEP! It’s especially useful if you’ve read a few papers and can’t make sense of the notation - this is the clearest description I’ve found!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.amazon.com/Nonequilibrium-Statistical-Physics-Modern-Perspective/dp/1107049547">Nonequilibrium Statistical Physics: A Modern Perspective</a> by Livi &amp; Politi [textbook]
+    <ul>
+      <li>Both this book and the one below contain detailed derivations of the techniques used for non-equilibrium stat mech. They’re both similar, but Attard’s book has more focus on entropy and the second law of thermodynamics, whereas Livi spends more time on critical phenomena.</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://arxiv.org/abs/1205.4176">Stochastic Thermodynamics, Fluctuation Theorems, and Molecular Machines</a> by Udo Seifert (2012)</li>
+  <li>
+<a href="https://www.amazon.com/Non-equilibrium-Thermodynamics-Statistical-Mechanics-Applications/dp/0199662762">Non-equilibrium Thermodynamics and Statistical Mechanics: Foundations and Applications</a> by Attard [textbook]</li>
+</ul>
+
+<h4 id="classical-mechanics-hamiltonian-mechanics-and-the-principle-of-least-action">
+<a class="anchor" href="#classical-mechanics-hamiltonian-mechanics-and-the-principle-of-least-action" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classical Mechanics, Hamiltonian Mechanics, and the Principle of Least Action</h4>
+
+<p>Friston sometimes frames the FEP in terms of a principle of least action, where action is an integral over a nice object called a Lagrangian. Lagrangians and Least Action principles give us a really powerful way to describe the equations of motion, symmetries, and conservation laws of our system, so knowing about this approach is really worthwhile. That being said, this approach doesn’t feature prominently in the basic formulation of the FEP, so don’t get stuck here!</p>
+
+<ul>
+  <li>
+<a href="https://theoreticalminimum.com/courses/classical-mechanics/2011/fall">Classical Mechanics</a> by Leonard Susskind [lecture videos]
+    <ul>
+      <li>Like his Stat-Mech course, Susskind does a good job of getting the main ideas across with just enough maths to allow you to understand more formal treatments later.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="gauge-theory">
+<a class="anchor" href="#gauge-theory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gauge theory</h4>
+
+<p>Gauge theory is a way of describing how certain symmetries in our system can lead to new properties/forces. It’s not a big part of the core theory, but I include it here because it’s a personal favourite, and Friston and collaborators have dabbled in applying some gauge-theoretic ideas to the FEP.</p>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=AuqKsBQnE2A&amp;list=PLrxfgDEc2NxZJcWcrxH3jyjUUrJlnoyzX&amp;index=30">Gauge Theory - The Biggest Ideas in The Universe</a> by Sean Carroll [video]</li>
+  <li>
+<a href="https://www.amazon.com/Physics-Finance-introduction-fundamental-interactions/dp/1795882417">Physics From Finance: A Gentle Introduction to Gauge Theories</a> by Jakob Schwichtenberg [textbook]
+    <ul>
+      <li>This is about as an intuitive introduction to the idea as you could ever get. Schwichtenberg actually starts off with an easy financial model and then uses that analogy to build up to the use of gauge theories in particle physics.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="maths">
+<a class="anchor" href="#maths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maths</h3>
+
+<p>I kind of want to say that I’m taking it for granted that you know at least a bit of <a href="https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/">multivariable calculus</a>, some <a href="https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/">linear algebra</a>, and some <a href="https://ocw.mit.edu/resources/res-6-012-introduction-to-probability-spring-2018/">probability theory</a> (the FEP people definitely assume this, and more), but also <em>I</em> didn’t know any of those things when I started (not so long ago!) and felt really helpless when they were just assumed, so the above links go to the MIT OpenCourseware courses I used to get going!</p>
+
+<h4 id="bayesian-inference">
+<a class="anchor" href="#bayesian-inference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayesian inference</h4>
+
+<p>The FEP fundamentally deals with agents trying to infer the state of their environment, given their current sensory data. Whenever you have a sentence like that, Bayes’ Theorem can’t be far behind! Understanding, on a gut level, the mechanics of how Bayes works, and being able to fluidly work with the different forms of the formula (knowing some basic identities in terms of joint distributions and marginal distributions) generally makes a lot of things in the FEP clearer!</p>
+
+<ul>
+  <li>
+<a href="https://yudkowsky.net/rational/bayes/">An Intuitive Explanation of Bayes’ Theorem</a> by Eliezer Yudkowsky [blog]
+    <ul>
+      <li>I link to this article all over the place because it’s just so good. It won’t teach you to use Bayesian techniques in your machine learning model, but it will teach you why you’d want to!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.amazon.com/Probability-Theory-Science-T-Jaynes/dp/0521592712">Probability Theory: The Logic of Science</a> by E.T. Jaynes [textbook]
+    <ul>
+      <li>Rederiving probability theory from scratch might be overkill, but this book sort of reads like the Feynman Lectures, but for probability theory. Be sure to grab the <a href="http://ksvanhorn.com/bayes/jaynes/index.html">unofficial errata</a>
+</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020">Machine Learning: A Probabilistic Perspective</a> by Kevin Murphy [textbook]
+    <ul>
+      <li>This is pretty lengthy but for the first 3 chapters (reintroducing key ideas in machine learning, probability theory, and generative models) are a quick way to get up to speed with a lot of the jargon, if you’ve already done a bit of probability theory beforehand! Chapter 5 on Bayesian statistics and chapter 21 on variational inference (see below) are especially relevant to the FEP!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="information-theory">
+<a class="anchor" href="#information-theory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Information theory</h4>
+
+<p>Entropy, confusingly, moonlights as a term in information theory. Not only that, but since much of the FEP is about a system inferring the state of a hidden (latent) variable through its noisy sensory signals, the techniques of information theory (invented by Claude Shannon for almost exactly that kind of problem) are key. Information theory also teaches us about the Kullback-Liebler divergence, which is worth knowing just on its own!</p>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=9r7FIXEAGvs&amp;t=7s">Shannon Entropy and Information Gain</a> by Louis Serrano [video]
+    <ul>
+      <li>This is a good intro video covering a lot of what you need to know when you’re just getting started</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.youtube.com/watch?v=ErfnhcEV1O8">A Short Introduction to Entropy, Cross-Entropy, and KL-Divergence</a> by Aurélien Géron [video]
+    <ul>
+      <li>I’ve watched this video at least 5 times. It’s a brilliant introduction to some genuinely challenging concepts in a way that leaves you feeling like everything finally makes sense!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.inference.org.uk/itprnn/book.pdf">Information Theory, Inference, and Learning Algorithms</a> by David MacKay [textbook]
+    <ul>
+      <li>This freely available textbook contains a lot more detail than the two intro videos. It’s a good place to look if you have nitty-gritty information theory questions.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="information-geometry">
+<a class="anchor" href="#information-geometry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Information geometry</h4>
+
+<p>Depending on your feelings about math, information geometry is either a sort of sublime union of differential geometry and statistics, or a Frankenstein’s Monster of two other monsters. Information geometry lets us do statistics on manifolds, which seems arbitrary (especially if you don’t know what a manifold is), but might be useful, and is at least very cool to say to your friends. Friston occasionally mentions the term, so this is here as a reference you can return to for when he does.</p>
+
+<ul>
+  <li>
+<a href="https://math.ucr.edu/home/baez/information/">Information Geometry</a> by John Baez [notes]
+    <ul>
+      <li>These notes are packed with insights about geometry, entropy, dissipative forces, and more! Most importantly, they feature a neat derivation of the Fischer Information Metric, which is a big part of the field. I really enjoy the way that John C. Baez explains maths - he manages to make me feel like I really could have <em>done that</em> when he derives something. A bonus of these notes is Baez riffing on how this information geometry applies to evolutionary systems, and the relative entropy (aka the KL-divergence!), so you can see a lot of the bread and butter of the FEP infused into this field!</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="computer-science-and-machine-learning">
+<a class="anchor" href="#computer-science-and-machine-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computer science and machine learning</h3>
+
+<p>The FEP will remain an intriguing bit of mathematical theory if good programmers don’t start to find ways to apply the ideas to problems in artificial intelligence and machine learning. On the other side, ideas from AI/ML are key to understanding where the FEP and Active Inference can fit in and what the current state-of-the-art is.</p>
+
+<h4 id="deep-learning">
+<a class="anchor" href="#deep-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deep Learning</h4>
+
+<p>Deep learning has been so damn successful that it’s worth knowing about just for that. Neural networks are great function-approximators, which can be <a href="https://kaiu.me/2017/07/11/introducing-the-deep-active-inference-agent/">useful in the FEP</a>. Also, the standard deep learning libraries (PyTorch/Tensorflow etc.) are worth learning because they make it really easy to build flexible models using current best-practices, and they make things like autodifferentiation and optimisation easy!</p>
+
+<ul>
+  <li>
+<a href="https://course.fast.ai/">fast.ai</a> by Jeremy Howard and Rachel Thomas [course]
+    <ul>
+      <li>An excellent, practical introduction to state of the art techniques in modern deep learning. Emphasis on deploying models. Worth it just for Jeremy Howard’s wisdom.</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.youtube.com/watch?v=iOh7QUZGyiU&amp;list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs">Advanced Deep Learning and Reinforcement Learning</a> by DeepMind [lecture videos]
+    <ul>
+      <li>A more detailed course which picks up a lot of the detail that Fast.ai leaves out.</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.deeplearningbook.org/">Deep Learning Book</a> by Ian Goodfellow, Yoshua Bengio, and Aaron Courville [textbook]
+    <ul>
+      <li>Not so relevant to the FEP, but so so good and freely available! If you ever want to know more about deep learning, it also has a great set of introductory chapters on calculus, linear algebra, and probability theory, which just give enough to get started in the general area, rather than doing entire university courses!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="reinforcement-learning">
+<a class="anchor" href="#reinforcement-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reinforcement Learning</h4>
+
+<p>RL is currently the most established field for creating autonomous, intelligent agents that can interact with their environments. Knowing the basics of how RL has approached intelligence, what kinds of techniques are available, and their limitations, helps us put the FEP in context. RL also deals heavily with Markov chains and the Markov property, and has established techniques for programming these kinds of agents. All of this can be transferred into the design of FEP-style agents.</p>
+
+<p>A nice side-effect is that RL has a bunch of established benchmarks and environments for testing how intelligent an agent is (like <a href="https://discovery.ucl.ac.uk/id/eprint/10056745/1/Friston_Active%20Inference%20on%20OpenAI%20Gym.pdf">OpenAI Gym</a>) and I think it’s key to the future of the FEP/Active Inference that their techniques can be shown to compete with (and eventually outperform) pure-RL models.</p>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=2pWv7GOvuf0&amp;list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ">Introduction to Reinforcement Learning</a> by David Silver [lecture videos]
+    <ul>
+      <li>The classic intro course!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.youtube.com/watch?v=SinprXg2hUA&amp;list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A">CS285: Deep Reinforcement Learning</a> by Sergey Levine [lecture videos]
+    <ul>
+      <li>Where the DeepMind course with David Silver introduces the ideas of traditional RL, this course goes into the details of modern deep RL. <a href="https://ttumiel.github.io">My brother</a> recommends it highly</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://spinningup.openai.com/en/latest/">OpenAI Spinning Up in Deep RL</a>
+    <ul>
+      <li>A syllabus for learning RL on your own, and the inspiration for this post!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="variational-inference">
+<a class="anchor" href="#variational-inference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variational inference</h4>
+
+<p>At the start of your journey into the FEP, you’ll keep hearing about ‘surprisal’, ‘the ELBO’ (evidence lower bound), ‘variational Bayes’, and ‘model evidence’. For whatever reason, I took too long to just go and find out that all of these ideas are well established and well explained in the field of variational inference. Variational inference involves trying to infer an (intractable) probability distribution by using the techiniques of mathematical optimisation to make a starting distribution closer to our (intractable) target distribution.</p>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=h0UE8FzdE8U">Variational Inference and Deep Learning: An Intuitive Introduction</a> by Alex Lamb [video]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=Dv86zdWjJKQ">Variational Inference: Foundations and Innovations</a> by David Blei [video]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=2pEkWk-LHmU">Machine Learning: Variational Inference</a> by John Boyd-Graeber [video]</li>
+  <li>
+<a href="(https://cse.buffalo.edu/faculty/mbeal/papers/beal03.pdf)">Variational Algorithms for Approximate Bayesian Inference</a> by Matthew Beal [thesis]
+    <ul>
+      <li>The PhD thesis Friston cites frequently and the source of many of the key equations used in the FEP</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://arxiv.org/abs/1906.08804">Derivation of the Variational Bayes Equations</a> by Alianna Maren [paper]
+    <ul>
+      <li>A friendlier explanation of Beal’s thesis, specifically for the FEP!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="generative-models">
+<a class="anchor" href="#generative-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generative models</h4>
+
+<p>Close your eyes and imagine a red bus! If you can do it, maybe that counts as evidence to you that your brain has some sort of generative model (i.e. can imagine/synthesise plausible data points). More generally, generative modelling tries to explain the data we’re observing as being generated by some smaller set of (latent) variables. The FEP deals heavily with the language and ideas of generative models, so reading up on directy is helpful!</p>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=7Pcvdo4EJeo">Modern Latent Variable Models</a> by DeepMind &amp; UCL [video]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=oqvdH_8lmCA&amp;list=PLoZgVqqHOumTqxIhcdcpOAJOOimrRCGZn">Probabilistic Graphical Models</a> by Eric Xing (also see course website <a href="http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html">here</a> [course]
+    <ul>
+      <li>I enjoy this course for taking a different perspective on ML/DL. There’s a lot of variety, and the course has videos on variational inference and generative models. There are also slides and course notes <a href="http://www.cs.cmu.edu/~epxing/Class/10708-20/lectures.html">here</a>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="the-free-energy-principle-and-active-inference">
+<a class="anchor" href="#the-free-energy-principle-and-active-inference" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Free Energy Principle and Active Inference</h2>
+
+<p>The main event!</p>
+
+<h3 id="general-introductions">
+<a class="anchor" href="#general-introductions" aria-hidden="true"><span class="octicon octicon-link"></span></a>General introductions</h3>
+
+<ul>
+  <li>
+<a href="https://slatestarcodex.com/2018/03/04/god-help-us-lets-try-to-understand-friston-on-free-energy/">God Help Us, Let’s Try To Understand Friston on Free Energy</a> by Scott Alexander [blog]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=TcFLQvz5uEg">Karl Friston on Brains, Predictions, and Free Energy</a> by Sean Carroll on The Mindscape Podcast [podcast]
+    <ul>
+      <li>Sean’s interview with Karl Friston is my favourite of his ‘popular’ appearances. Sean Carroll really got some great detail and explanations from Friston</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://www.youtube.com/watch?v=NwzuibY5kUs">Karl Friston: Neuroscience and the Free Energy Principle</a> by Lex Fridman [podcast]</li>
+  <li>
+<a href="https://www.aliusresearch.org/uploads/9/1/6/0/91600416/friston_-_of_woodlice_and_men.pdf">Of woodlice and men: A Bayesian account of cognition, life and consciousness</a> an interview with Karl Friston by Martin Fortier and Daniel A. Friedman [transcript]
+    <ul>
+      <li>This interview with Friston delves into the history, philosophy, paradoxes, and clinical tie-ins of the FEP. I found it really helpful because I find it easier to understand a field if I know how it came about - it helps you see why <em>those</em> particular bricks were laid in that place. It reads really easily, and it has some ideas I’d wondered about but never seen in the literature (like the relationship between the FEP and <a href="https://apsc450computationalneuroscience.wordpress.com/marrs-three-levels-of-inquiry/">David Marr’s famous Three Levels of Analysis</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="technical-introductions">
+<a class="anchor" href="#technical-introductions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Technical introductions</h3>
+
+<ul>
+  <li>
+<a href="https://www.youtube.com/watch?v=C94WDXAe4EE&amp;list=PLNm0u2n1Iwdoe-4Be7frRpvBQ0q7yhnBV">Active Inference Podcast</a> by <a href="https://twitter.com/InferenceActive">@InferenceActive</a> [podcast]
+    <ul>
+      <li>This is a weekly podcast/journal club on the FEP/Active Inference. They’re detailed and the participants are active researchers in the field, so it’s a great way to hear their thoughts on some of the field’s key papers</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://medium.com/@solopchuk/tutorial-on-active-inference-30edcf50f5dc">Tutorial on Active Inference</a> by Oleg Solopchuk [blog]</li>
+  <li>
+<a href="https://www.aliannajmaren.com/2017/07/27/how-to-read-karl-friston-in-the-original-greek/">How To Read Karl Friston in The Original Greek</a> by Alianna Maren [blog]</li>
+  <li>
+<a href="https://kaiu.me/2017/06/23/deep-active-inference-for-artificial-general-intelligence/">The Free Energy Principle and Active Inference</a> by Kai Ueltzhöffer [blog]
+    <ul>
+      <li>This post and the two below it are my favourite blog posts on the FEP. They come with enough math to understand it on a deep level, the explanations are intuitively satisfying, and  I really enjoy the</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://kaiu.me/2017/07/11/introducing-the-deep-active-inference-agent/">Introducing The Deep Active Inference Agent</a> by Kai Ueltzhöffer [blog]
+    <ul>
+      <li>A great technical discussion of using deep learning to improve active inference! Notably, there is working code you can play around with and a <a href="https://arxiv.org/abs/1709.02341">paper on arXiv</a> going into more detail</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://kaiu.me/2019/10/09/life-and-the-second-law/">Life and The Second Law</a> by Kai Ueltzhöffer [blog]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=Y1egnoCWgUg">Active Inference and Artificial Curiosity</a> by Karl Friston [video]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=b1hEc6vay">Predictive Coding Workshop</a> by Karl Friston [video]</li>
+  <li>
+<a href="https://www.youtube.com/watch?v=WzFQzFZiwzk">A Tutorial on Active Inference</a> by Maxwell Ramstead [video]
+    <ul>
+      <li>This is a really well explained intro to both the FEP and active inference. The big bonus is that it includes a great explanation of Markov Blankets, which you’ll definitely want to know about!</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://iwaiworkshop.github.io/#programme">International Workshop on Active Inference</a> [videos]
+    <ul>
+      <li>ECML-PKDD 2020 hosted the first ever International Workshop on Active Inference! This a big deal for the field as a whole, both because active inference got an entire workshop devoted to it at a mainstream machine learning conference, and because created a great  space to find more people working in the field! The video tutorials are all available to watch, and come paired with the slideshows. There were too many good talks to list them all, so go check the programme page above! Some talks I particularly enjoyed were:
+        <ul>
+          <li>
+<a href="https://slideslive.com/38933135/active-learning-and-active-inference-in-exploration">Active Learning and Active Inference in Exploration</a> by Philipp Schwartenbeck</li>
+          <li>
+<a href="https://slideslive.com/38933137/putting-an-end-to-endtoend-gradientisolated-learning-of-representations">Putting An End to End-to-End: Gradient-Isolated Learning of Representations</a> by Sindy Löwe</li>
+          <li>
+<a href="https://slideslive.com/38933114/on-the-relationship-of-active-inference-and-control-as-inference">On the relationship between active inference and control as inference</a> by Beren Millidge, Alexander Tschantz, Anil Seth and Christopher L. Buckley, and the closely related <a href="https://slideslive.com/38933122/active-inference-or-control-as-inference-a-unifying-view">Active Inference or Control as Inference? A Unifying View</a> by Abraham Imohiosen, Joe Watson and Jan Peters</li>
+          <li>
+<a href="https://slideslive.com/38933123/a-worked-example-of-fokkerplanck-based-active-inference">A Worked Example of Fokker-Planck based Active Inference</a> by Magnus T. Koudahl and Bert de Vries</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="key-papers">
+<a class="anchor" href="#key-papers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key papers</h3>
+
+<p>This list is as much a list of some of the most fascinating directions of research in the field as it is a general overview. The hope is that the ideas in some of these papers sound so cool that you can’t help but want to take the ideas further (that was my experience, and that’s why I’m still here!).
+Rereading this list, I can see it’s skewed by my own research interests, so let me know what other sections/papers should be added!</p>
+
+<ul>
+  <li>
+<strong>General</strong>
+    <ul>
+      <li>
+<a href="https://arxiv.org/abs/1705.09156">The Free Energy Principle for Action and Perception: A Mathematical Review</a> by Christopher L. Buckley, Chang Sub Kim, Simon McGregor, Anil K. Seth (2017)
+        <ul>
+          <li>If you’re already mathematically trained and just want a good, deep, technical intro to the FEP this is a great paper to start with. It lays almost all of the terminology and main constructs out in one place (notably, it doesn’t introduce Markov Blankets or information geometry) and you’ll be able to read almost every other paper in the FEP literature after reading this!</li>
+        </ul>
+      </li>
+      <li>
+<a href="https://arxiv.org/abs/1709.02341">Deep Active Inference</a> by Kai Ueltzhöffer (2017)</li>
+      <li>
+<a href="https://arxiv.org/abs/1906.10184">A Free Energy Principle for a Particular Physics</a> by Karl Friston (2019)
+        <ul>
+          <li>This monograph lays out a sort of grand-unified vision of the FEP as seen from Karl Friston’s point of view. It’s one of the most encompassing of all the FEP papers and I implicitly designed this syllabus so that, if you knew most of the stuff in the prerequisites list, you’d be able to read and understand this</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Reinforcement Learning and Active Inference</strong>
+    <ul>
+      <li>
+<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006421">Reinforcement Learning or Active Inference?</a> by Karl J. Friston, Jean Daunizeau, Stefan J. Kiebel (2009)</li>
+      <li>
+<a href="https://arxiv.org/abs/1909.10863">Active Inference: Demystified and Compared</a> by Noor Sajid, Philip Ball, Karl J. Friston (2019)</li>
+      <li>
+<a href="https://arxiv.org/abs/2002.12636">Reinforcement Learning Through Active Inference</a> by Alexander Tschantz, Beren Millidge, Anil K. Seth, Christopher L. Buckley (2020)</li>
+      <li>
+<a href="https://arxiv.org/abs/2009.01791">Action and Perception as Divergence Minimisation</a> by Danijar Hafner, Pedro A. Ortega, Jimmy Ba, Thomas Parr, Karl Friston, Nicolas Heess (2020)</li>
+      <li>
+<a href="https://arxiv.org/abs/2001.07203">Active Inference on Discrete State Spaces: A Synthesis</a> by Lancelot Da Costa, Thomas Parr, Noor Sajid, Sebastijan Veselic, Victorita Neacsu, Karl Friston (2020)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Physics/Theory</strong>
+    <ul>
+      <li>
+<a href="https://arxiv.org/abs/1203.3271">The Thermodynamics of Prediction</a> by Susanne Still, David A. Sivak, Anthony J. Bell, Gavin E. Crooks (2012)</li>
+      <li>
+<a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002400">Towards A Neuronal Gauge Theory</a> by Biswa Sengupta, Arturo Tozzi, Gerald K. Cooray, Pamela K. Douglas, Karl J. Friston (2016)</li>
+      <li>
+<a href="https://arxiv.org/abs/1705.06614">Approximate Bayesian inference as a gauge theory</a> by Biswa Sengupta, Karl Friston (2017)</li>
+      <li>
+<a href="https://www.sciencedirect.com/science/article/pii/S0022249615000759">A Tutorial on The Free Energy Framework for Perception and Learning</a> by Rafal Bogacz (2017)</li>
+      <li>
+<a href="https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0159">Markov Blankets, Information Geometry, and Stochastic Thermodynamics</a> by Thomas Parr, Lancelot Da Costa, and Karl Friston (2019)</li>
+      <li>
+<a href="https://arxiv.org/abs/1908.08374">On the statistical mechanics of life: Schrödinger revisited</a> by Kate Jeffery, Robert Pollack, Carlo Rovelli (2019)</li>
+      <li>
+<a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007865">Conservation Laws by Virtue of Scale Symmetries in Neural Systems</a> by Erik D. Fagerholm, W. M. C. Foulkes, Yasir Gallero-Salas, Fritjof Helmchen, Karl J. Friston, Rosalyn J. Moran, Robert Leech (2020)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Active Inference and Control Theory</strong>
+    <ul>
+      <li>
+<a href="https://www.fil.ion.ucl.ac.uk/~karl/Active%20inference%20and%20agency%20optimal%20control%20without%20cost%20functions.pdf">Active Inference and Agency: Optimal Control without Cost Functions</a> by Karl Friston, Spyridon Samothrakis, and Read Montague (2012)</li>
+      <li>
+<a href="https://www.mitpressjournals.org/doi/full/10.1162/NECO_a_00912">Active Inference: A Process Theory</a> by Karl Friston, Thomas Fitzgerald, Francesco Rigol, Philipp Schwartenbeck, and Giovanni Pezzulo (2016)</li>
+      <li>
+<a href="http://sro.sussex.ac.uk/id/eprint/84970/">Active inference: building a new bridge between control theory and embodied cognitive science</a> PhD Thesis by Manuel Baltieri (2019)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Computational Psychiatry</strong>
+    <ul>
+      <li>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340107/">What Is Mood: A Computational Perspective</a> by James Clark, Stuart Watson, and Karl Friston (2018)</li>
+      <li>
+<a href="https://psyarxiv.com/62pfd/">Deeply Felt Affect</a> by Casper Hesp, Ryan Smith, Thomas Parr, Micah Allen, Karl Friston, Maxwell Ramstead (2019)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Molecular Biology</strong>
+    <ul>
+      <li>
+<a href="https://royalsocietypublishing.org/doi/10.1098/rsif.2014.1383">Knowing One’s Place: A Free Energy Approach to Pattern Regulation</a> by Karl Friston, Michael Levin, Biswa Sengupta, and Giovanni Pezzulo (2015)</li>
+      <li>
+<a href="https://pubmed.ncbi.nlm.nih.gov/31320316/">Morphogenesis as Bayesian inference: A variational approach to pattern formation and control in complex biological systems </a> by Franz Kuchling, Karl Friston, Georgi Georgiev, and Michael Levin (2020)</li>
+    </ul>
+  </li>
+  <li>
+<strong>Enactivism and Embodied Cognition</strong>
+    <ul>
+      <li>
+<a href="https://journals.sagepub.com/doi/full/10.1177/1059712319862774">A Tale of Two Densities: Active Inference is Enactive Inference</a> by Maxwell Ramstead, Michael Kirchoff, and Karl Friston (2019)
+        <ul>
+          <li>This paper was discussed in the <a href="https://www.youtube.com/watch?v=jHWCQ1dpoK0">Active Inference Live-stream</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<strong>Ecological Psychology and Evolution</strong>
+    <ul>
+      <li>
+<a href="https://www.frontiersin.org/articles/10.3389/frobt.2018.00021/full">The Active Inference Approach to Ecological Perception: General Information Dynamics for Natural and Artificial Embodied Cognition</a> by Adam Linson, Andy Clark, Subramanian Ramamoorthy, and Karl Friston (2018)</li>
+      <li>
+<a href="https://www.sciencedirect.com/science/article/pii/S157106451930003X">Variational Ecology and the Physics of Sentient Systems</a> by Maxwell Ramstead, Axel Constant, Paul Badcock, and Karl Friston (2019)</li>
+      <li>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6861365/">The Hierarchically Mechanistic Mind: An Evolutionary Systems Theory of the Human Brain, Cognition, and Behaviour</a> by Paul Badcock, Karl Friston, Maxwell Ramstead, Annemie Ploeger, and Jakob Hohwy</li>
+    </ul>
+  </li>
+  <li>
+<strong>Origins of Life/Self-Organisation</strong>
+    <ul>
+      <li>
+<a href="https://royalsocietypublishing.org/doi/10.1098/rsif.2013.0475">Life As We Know It</a> by Karl Friston (2013)</li>
+      <li>
+<a href="https://www.sciencedirect.com/science/article/pii/S1571064517301409">Answering Schrodinger’s question: a free-energy formuation</a> by Maxwell Ramstead, Paul Badcock, Karl Friston (2018)</li>
+      <li>
+<a href="https://royalsocietypublishing.org/doi/10.1098/rsif.2017.0792">The Markov Blankets of Life: Autonomy, Active Inference, and the Free Energy Principle</a> by Michael Kirchhoff, Thomas Parr, Ensor Palacios, Karl Friston and Julian Kiverstein (2018)</li>
+      <li>
+<a href="https://www.sciencedirect.com/science/article/pii/S0022519319304588">On Markov Blankets and hierarchical self-organisation</a> by Ensor Palacios, Adeel Razi, Thomas Parr, Michael Kirchhoff, Karl Friston (2020)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="open-problems">
+<a class="anchor" href="#open-problems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open Problems</h2>
+
+<p>What are the current open problems in the FEP/Active Inference framework? What research directions are there? Suggestions are encouraged, so comment here or add to <a href="https://twitter.com/jnearestn/status/1317214588459507715">this ongoing twitter thread</a></p>
+
+<h2 id="conclusion">
+<a class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h2>
+
+<p>I hope this encourages more people to get stuck-in to the FEP/Active Inference research-space. It’s so interdisciplinary that it welcomes people from all kinds of backgrounds, and there’s important work that needs doing in math, neurobiology, philosophy, ecology, physics, software engineering, machine learning, and more! There are so many friendly people who are willing to think out loud, explain, answer questions, and offer support - seriously, just try to tweet some of the people mentioned in this post!</p>
+
+<p>Good luck with your studies, and even more so with what you create with that knowledge - perception-and-action <em>are</em> two sides of the same coin, after all!</p>
+
+<h2 id="contributors">
+<a class="anchor" href="#contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributors</h2>
+
+<p>Thanks to these people for suggesting resources to add to the post!</p>
+
+<p><a href="https://twitter.com/inferenceactive">InferenceActive</a>
+<a href="https://twitter.com/berenmillidge">Beren Millidge</a></p>
+
+<hr>
+
+<p>Thank you to <a href="https://twitter.com/QVagabond">Gianluca</a> and <a href="https://twitter.com/InferenceActive">@InferenceActive</a> for their helpful comments on drafts of this post!</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="jaredtumiel/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/2020/10/14/spinning-up-in-ai.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
